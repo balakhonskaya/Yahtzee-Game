@@ -1,0 +1,34 @@
+.dice-box {
+    margin-top: 20px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    background-color: lightblue;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.dices-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.roll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.btn-roll {
+    max-width: 100px;
+}
