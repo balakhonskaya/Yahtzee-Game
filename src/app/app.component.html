@@ -11,7 +11,7 @@
         <thead>
           <tr>
             <th scope="col">Option</th>
-            <th scope="col">Score</th>
+            <th scope="col">Total Score</th>
             <th scope="col">Current Score</th>
             <th scope="col">Select button</th>
           </tr>
@@ -19,20 +19,20 @@
         <tbody>
           <tr>
             <th scope="row">Ones</th>
-            <td>{{totalScore+valueScore}}</td>
-            <td >{{valueScore}}</td>
+            <td>{{totalScore}}</td>
+            <td >{{valueScore[0]}}</td>
             <td><button class="btn btn-primary">Select</button></td>
           </tr>
           <tr>
             <th scope="row">Twoes</th>
             <td>0</td>
-            <td>Thornton</td>
+            <td>{{valueScore[1]}}</td>
             <td><button class="btn btn-primary">Select</button></td>
           </tr>
           <tr>
             <th scope="row">Threes</th>
             <td>0</td>
-            <td>Thornton</td>
+            <td>{{valueScore[2]}}</td>
             <td><button class="btn btn-primary">Select</button></td>
           </tr>
         </tbody>

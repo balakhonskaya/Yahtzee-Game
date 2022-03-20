@@ -12,9 +12,12 @@ export class DicesComponent implements OnInit {
   dice4: number;
   dice5: number;
   oneScore: number;
+  twoScore: number;
+  threeScore: number;
   diceArray = [];
+  scoreArray = [];
   value: number;
-  @Output() newItemEvent = new EventEmitter<number>();
+  @Output() newItemEvent = new EventEmitter<[number]>();
  
 
   constructor() { }
@@ -24,13 +27,12 @@ export class DicesComponent implements OnInit {
   return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  /*startRoll(genArray) {
-    this.generateArray();
-  }*/
-
   startRoll() {
     this.diceArray = [];
     this.oneScore =0;
+    this.twoScore = 0;
+    this.threeScore = 0;
+    this.scoreArray = [];
     this.dice1 = this.getRandom(1,6);
     this.dice2  = this.getRandom(1,6);
     this.dice3  = this.getRandom(1,6);
@@ -50,16 +52,40 @@ export class DicesComponent implements OnInit {
         }
       }
       console.log("value:"+this.oneScore);
-      return this.oneScore;
-     } 
+     } else { this.oneScore = 0;} 
+
+     if (this.diceArray.includes(2)) {
+      for (let i = 0; i < this.diceArray.length; i++)  {
+        if (this.diceArray[i] == 1) {
+           this.twoScore =this.twoScore +2;
+        }
+      }
+      console.log("value:"+this.twoScore);
+     } else { this.twoScore = 0;} 
+
+     if (this.diceArray.includes(3)) {
+      for (let i = 0; i < this.diceArray.length; i++)  {
+        if (this.diceArray[i] == 1) {
+          this.threeScore =this.threeScore +2;
+        }
+      }
+      console.log("value:"+this.threeScore);
+     } else { this.threeScore = 0;}
+
+     this.scoreArray.push(this.oneScore);
+     this.scoreArray.push(this.twoScore);
+     this.scoreArray.push(this.threeScore);
+     console.log(this.scoreArray);
+     return this.scoreArray;
+     
   }
 
   
 
-  addNewItem(value: number) {
-    value = this.startRoll();
-      this.newItemEvent.emit(value);
-      console.log('inside function '+value);
+  addNewItem(arrayValue) {
+     arrayValue = this.startRoll();
+      this.newItemEvent.emit(arrayValue);
+      console.log('inside function '+arrayValue);
      }
   
   
