@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'yahtzee-game';
-  valueScore: number;
-  totalScore: number = 2;
+  valueScore = [0,0,0];
+  totalScore= [0,0,0];
   sum: number;
 
-  addItem(NewItem: number) {
+  addItem(NewItem: [number]) {
     this.valueScore = NewItem;
     console.log('app-function'+this.valueScore);
-    if (this.valueScore > 0) {
-    this.totalScore = this.totalScore + this.valueScore;
+    for (let i = 0; i < 3; i++ ) {
+      this.totalScore[i]=this.totalScore[i] + this.valueScore[i];
     }
   }
 
