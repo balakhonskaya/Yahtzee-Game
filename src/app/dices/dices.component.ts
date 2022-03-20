@@ -18,9 +18,9 @@ export class DicesComponent implements OnInit {
   scoreArray = [];
   value: number;
   @Output() newItemEvent = new EventEmitter<[number]>();
- 
 
   constructor() { }
+
   getRandom(min:number, max:number) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -56,7 +56,7 @@ export class DicesComponent implements OnInit {
 
      if (this.diceArray.includes(2)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
-        if (this.diceArray[i] == 1) {
+        if (this.diceArray[i] == 2) {
            this.twoScore =this.twoScore +2;
         }
       }
@@ -65,8 +65,8 @@ export class DicesComponent implements OnInit {
 
      if (this.diceArray.includes(3)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
-        if (this.diceArray[i] == 1) {
-          this.threeScore =this.threeScore +2;
+        if (this.diceArray[i] == 3) {
+          this.threeScore =this.threeScore +3;
         }
       }
       console.log("value:"+this.threeScore);
@@ -79,8 +79,6 @@ export class DicesComponent implements OnInit {
      return this.scoreArray;
      
   }
-
-  
 
   addNewItem(arrayValue) {
      arrayValue = this.startRoll();
