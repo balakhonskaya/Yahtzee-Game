@@ -2,12 +2,41 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-dices></app-dices>
+      <app-dices (newItemEvent)="addItem($event)"></app-dices>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <app-table></app-table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Option</th>
+            <th scope="col">Score</th>
+            <th scope="col">Current Score</th>
+            <th scope="col">Select button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Ones</th>
+            <td>{{totalScore+valueScore}}</td>
+            <td >{{valueScore}}</td>
+            <td><button class="btn btn-primary">Select</button></td>
+          </tr>
+          <tr>
+            <th scope="row">Twoes</th>
+            <td>0</td>
+            <td>Thornton</td>
+            <td><button class="btn btn-primary">Select</button></td>
+          </tr>
+          <tr>
+            <th scope="row">Threes</th>
+            <td>0</td>
+            <td>Thornton</td>
+            <td><button class="btn btn-primary">Select</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
