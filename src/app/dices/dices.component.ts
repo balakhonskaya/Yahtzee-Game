@@ -18,7 +18,7 @@ export class DicesComponent implements OnInit {
   scoreArray = [];
   value: number;
   @Output() newItemEvent = new EventEmitter<[number]>();
-  @Input() oneSelected;
+  @Input() Selected: {first: boolean; second: boolean; third: boolean};
 
   constructor() { }
 
@@ -46,35 +46,38 @@ export class DicesComponent implements OnInit {
     this.diceArray.push(this.dice5);
     console.log(this.diceArray);
     
-    if (this.oneSelected === true) {
-      console.log("Selected "+ this.oneSelected);
-    }
-    if (this.diceArray.includes(1)) {
-      for (let i = 0; i < this.diceArray.length; i++)  {
-        if (this.diceArray[i] == 1) {
-           this.oneScore ++;
+    if (this.Selected.first == true) {
+      console.log("Selected first"+ this.Selected.first);
+      if (this.diceArray.includes(1)) {
+        for (let i = 0; i < this.diceArray.length; i++)  {
+          if (this.diceArray[i] == 1) {
+             this.oneScore ++;
+          }
         }
-      }
-      console.log("value:"+this.oneScore);
-     } else { this.oneScore = 0;} 
-
+        console.log("value1 :"+this.oneScore);
+       } else { this.oneScore = 0;}
+    } else { this.oneScore = 0;}
+     
+    if (this.Selected.second == true) {
      if (this.diceArray.includes(2)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
         if (this.diceArray[i] == 2) {
            this.twoScore =this.twoScore +2;
         }
       }
-      console.log("value:"+this.twoScore);
+      console.log("value2:"+this.twoScore);
      } else { this.twoScore = 0;} 
-
+    }
+    if (this.Selected.third == true) {
      if (this.diceArray.includes(3)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
         if (this.diceArray[i] == 3) {
           this.threeScore =this.threeScore +3;
         }
       }
-      console.log("value:"+this.threeScore);
+      console.log("value3:"+this.threeScore);
      } else { this.threeScore = 0;}
+    }
 
      this.scoreArray.push(this.oneScore);
      this.scoreArray.push(this.twoScore);
@@ -93,11 +96,13 @@ export class DicesComponent implements OnInit {
   
  
   ngOnInit(): void {
-    
+    console.log("Selected:" + this.Selected.first)
+    //console.log('dices 1 '+this.Selected[1]);
+    //console.log('dices 2 '+this.Selected[2]);
+    //console.log('dices 3 '+this.Selected[3]);
   }
 
-  ngOnChanges(): void {
-    console.log('ng '+this.oneSelected);
-  }
+
+    
  
 }

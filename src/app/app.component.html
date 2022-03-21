@@ -2,7 +2,10 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <app-dices (newItemEvent)="addItem($event)"></app-dices>
+      <app-dices 
+      (newItemEvent)="addItem($event)"
+      [Selected]="Selected"
+      ></app-dices>
     </div>
   </div>
   <div class="row">

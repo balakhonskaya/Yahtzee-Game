@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'yahtzee-game';
   valueScore = [0,0,0];
   totalScore= [0,0,0];
-  oneSelected: boolean = false;
-  twoSelected: boolean = false;
-  threeSelected: boolean = false;
-  sum: number;
+  oneSelected: boolean = true;
+  twoSelected: boolean = true;
+  threeSelected: boolean = true;
+  Selected = {first: this.oneSelected, second: this.twoSelected, third: this.threeSelected};
+  
 
   onChangeOneSelect() {
     this.oneSelected = !this.oneSelected;
@@ -36,6 +37,10 @@ export class AppComponent {
       this.totalScore[i]=this.totalScore[i] + this.valueScore[i];
     }
   }
-
+  ngOnInit(): void {
+    console.log('app-selected' + this.Selected.first);
+  }
+  
 
 }
+
