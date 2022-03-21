@@ -38,6 +38,24 @@
             <td>{{valueScore[2]}}</td>
             <td><button class="btn btn-primary" (click)="onChangeThreeSelect()" [ngClass]="threeSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
           </tr>
+          <tr>
+            <th scope="row">Fours</th>
+            <td>{{totalScore[3]}}</td>
+            <td>{{valueScore[3]}}</td>
+            <td><button class="btn btn-primary" (click)="onChangeFourSelect()" [ngClass]="fourSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
+          </tr>
+          <tr>
+            <th scope="row">Fives</th>
+            <td>{{totalScore[4]}}</td>
+            <td>{{valueScore[4]}}</td>
+            <td><button class="btn btn-primary" (click)="onChangeFiveSelect()" [ngClass]="fiveSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
+          </tr>
+          <tr>
+            <th scope="row">Sixes</th>
+            <td>{{totalScore[5]}}</td>
+            <td>{{valueScore[5]}}</td>
+            <td><button class="btn btn-primary" (click)="onChangeSixSelect()" [ngClass]="sixSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
+          </tr>
         </tbody>
       </table>
     </div>
