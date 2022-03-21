@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-dices',
@@ -18,6 +18,7 @@ export class DicesComponent implements OnInit {
   scoreArray = [];
   value: number;
   @Output() newItemEvent = new EventEmitter<[number]>();
+  @Input() oneSelected;
 
   constructor() { }
 
@@ -45,6 +46,9 @@ export class DicesComponent implements OnInit {
     this.diceArray.push(this.dice5);
     console.log(this.diceArray);
     
+    if (this.oneSelected === true) {
+      console.log("Selected "+ this.oneSelected);
+    }
     if (this.diceArray.includes(1)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
         if (this.diceArray[i] == 1) {
@@ -89,7 +93,11 @@ export class DicesComponent implements OnInit {
   
  
   ngOnInit(): void {
+    
   }
 
+  ngOnChanges(): void {
+    console.log('ng '+this.oneSelected);
+  }
  
 }

@@ -21,19 +21,19 @@
             <th scope="row">Ones</th>
             <td>{{totalScore[0]}}</td>
             <td >{{valueScore[0]}}</td>
-            <td><button class="btn btn-primary">Select</button></td>
+            <td><button class="btn btn-primary" (click)="onChangeOneSelect()" [ngClass]="oneSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
           </tr>
           <tr>
             <th scope="row">Twoes</th>
             <td>{{totalScore[1]}}</td>
             <td>{{valueScore[1]}}</td>
-            <td><button class="btn btn-primary">Select</button></td>
+            <td><button class="btn btn-primary" (click)="onChangeTwoSelect()" [ngClass]="twoSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
           </tr>
           <tr>
             <th scope="row">Threes</th>
             <td>{{totalScore[2]}}</td>
             <td>{{valueScore[2]}}</td>
-            <td><button class="btn btn-primary">Select</button></td>
+            <td><button class="btn btn-primary" (click)="onChangeThreeSelect()" [ngClass]="threeSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
           </tr>
         </tbody>
       </table>

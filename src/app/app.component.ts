@@ -9,7 +9,25 @@ export class AppComponent {
   title = 'yahtzee-game';
   valueScore = [0,0,0];
   totalScore= [0,0,0];
+  oneSelected: boolean = false;
+  twoSelected: boolean = false;
+  threeSelected: boolean = false;
   sum: number;
+
+  onChangeOneSelect() {
+    this.oneSelected = !this.oneSelected;
+    console.log(this.oneSelected);
+  }
+
+  onChangeTwoSelect() {
+    this.twoSelected = !this.twoSelected;
+    console.log(this.twoSelected);
+  }
+
+  onChangeThreeSelect() {
+    this.threeSelected = !this.threeSelected;
+    console.log(this.threeSelected);
+  }
 
   addItem(NewItem: [number]) {
     this.valueScore = NewItem;
