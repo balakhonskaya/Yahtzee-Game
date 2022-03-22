@@ -21,7 +21,7 @@ export class DicesComponent implements OnInit {
   scoreArray = [];
   value: number;
   @Output() newItemEvent = new EventEmitter<[number]>();
-  @Input() Selected: {first: boolean; second: boolean; third: boolean, fourth: boolean, fifth: boolean, sixth: boolean};
+  @Input() Selected: {0: boolean; 1: boolean; 2: boolean, 3: boolean, 4: boolean, 5: boolean};
 
   constructor() { }
 
@@ -52,8 +52,8 @@ export class DicesComponent implements OnInit {
     this.diceArray.push(this.dice5);
     console.log(this.diceArray);
     
-    if (this.Selected.first == true) {
-      console.log("Selected first"+ this.Selected.first);
+    if (this.Selected[0] == true) {
+      //console.log("Selected first"+ this.Selected.first);
       if (this.diceArray.includes(1)) {
         for (let i = 0; i < this.diceArray.length; i++)  {
           if (this.diceArray[i] == 1) {
@@ -64,7 +64,7 @@ export class DicesComponent implements OnInit {
        } else { this.oneScore = 0;}
     } else { this.oneScore = 0;}
      
-    if (this.Selected.second == true) {
+    if (this.Selected[1] == true) {
      if (this.diceArray.includes(2)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
         if (this.diceArray[i] == 2) {
@@ -74,7 +74,7 @@ export class DicesComponent implements OnInit {
       console.log("value2:"+this.twoScore);
      } else { this.twoScore = 0;} 
     }
-    if (this.Selected.third == true) {
+    if (this.Selected[2] == true) {
      if (this.diceArray.includes(3)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
         if (this.diceArray[i] == 3) {
@@ -85,7 +85,7 @@ export class DicesComponent implements OnInit {
      } else { this.threeScore = 0;}
     }
 
-    if (this.Selected.fourth == true) {
+    if (this.Selected[3] == true) {
       if (this.diceArray.includes(4)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
          if (this.diceArray[i] == 4) {
@@ -96,7 +96,7 @@ export class DicesComponent implements OnInit {
       } else { this.fourScore = 0;}
      }
 
-     if (this.Selected.fifth == true) {
+     if (this.Selected[4] == true) {
       if (this.diceArray.includes(5)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
          if (this.diceArray[i] == 5) {
@@ -107,7 +107,7 @@ export class DicesComponent implements OnInit {
       } else { this.fiveScore = 0;}
      }
 
-     if (this.Selected.sixth == true) {
+     if (this.Selected[5] == true) {
       if (this.diceArray.includes(6)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
          if (this.diceArray[i] == 6) {
@@ -138,10 +138,7 @@ export class DicesComponent implements OnInit {
   
  
   ngOnInit(): void {
-    //console.log("Selected:" + this.Selected.first)
-    //console.log('dices 1 '+this.Selected[1]);
-    //console.log('dices 2 '+this.Selected[2]);
-    //console.log('dices 3 '+this.Selected[3]);
+    
   }
 
 
