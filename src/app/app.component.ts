@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'yahtzee-game';
-  valueScore = [0,0,0,0,0,0,0];
-  totalScore= [0,0,0,0,0,0,0];
+  valueScore = [0,0,0,0,0,0,0,0];
+  totalScore= [0,0,0,0,0,0,0,0];
 
   oneSelected: boolean = false;
   twoSelected: boolean = false;
@@ -17,8 +17,9 @@ export class AppComponent {
   fiveSelected: boolean = false;
   sixSelected: boolean = false;
   threeKindSelected: boolean = false;
+  fourKindSelected: boolean = false;
   selectedOption: boolean;
-  Selected = {0: this.oneSelected, 1: this.twoSelected, 2: this.threeSelected, 3: this.fourSelected, 4: this.fiveSelected, 5: this.sixSelected, 6: this.threeKindSelected};
+  Selected = {0: this.oneSelected, 1: this.twoSelected, 2: this.threeSelected, 3: this.fourSelected, 4: this.fiveSelected, 5: this.sixSelected, 6: this.threeKindSelected, 7: this.fourKindSelected};
   
   /*
   onChangeSelect(selectedOption) {
@@ -67,6 +68,12 @@ export class AppComponent {
     this.threeKindSelected = !this.threeKindSelected;
     this.Selected[6] = this.threeKindSelected;
     console.log(this.threeKindSelected);
+  }
+
+  onChangeFourKindSelect() {
+    this.fourKindSelected = !this.fourKindSelected;
+    this.Selected[7] = this.fourKindSelected;
+    console.log(this.fourKindSelected);
   }
 
   addItem(NewItem: [number]) {
