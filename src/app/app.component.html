@@ -56,6 +56,12 @@
             <td>{{valueScore[5]}}</td>
             <td><button class="btn btn-primary" (click)="onChangeSixSelect()" [ngClass]="sixSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
           </tr>
+          <tr>
+            <th scope="row">3 of a kind</th>
+            <td>{{totalScore[6]}}</td>
+            <td>{{valueScore[6]}}</td>
+            <td><button class="btn btn-primary" (click)="onChangeThreeKindSelect()" [ngClass]="threeKindSelected ? 'btn-success' : 'btn-primary'">Select</button></td>
+          </tr>
         </tbody>
       </table>
     </div>

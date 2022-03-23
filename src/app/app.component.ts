@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'yahtzee-game';
-  valueScore = [0,0,0,0,0,0];
-  totalScore= [0,0,0,0,0,0];
+  valueScore = [0,0,0,0,0,0,0];
+  totalScore= [0,0,0,0,0,0,0];
 
   oneSelected: boolean = false;
   twoSelected: boolean = false;
@@ -16,16 +16,19 @@ export class AppComponent {
   fourSelected: boolean = false;
   fiveSelected: boolean = false;
   sixSelected: boolean = false;
+  threeKindSelected: boolean = false;
   selectedOption: boolean;
-  Selected = {0: this.oneSelected, 1: this.twoSelected, 2: this.threeSelected, 3: this.fourSelected, 4: this.fiveSelected, 5: this.sixSelected};
+  Selected = {0: this.oneSelected, 1: this.twoSelected, 2: this.threeSelected, 3: this.fourSelected, 4: this.fiveSelected, 5: this.sixSelected, 6: this.threeKindSelected};
   
   /*
   onChangeSelect(selectedOption) {
     this.selectedOption = !this.selectedOption;
     console.log("change func"+ this.selectedOption);
+    let searchName = selectedOption;
+    let index = this.Selected.map(el => el.name).indexOf(searchName);
     this.Selected[0] = this.selectedOption;
   }*/
-
+  
   onChangeOneSelect() {
     this.oneSelected = !this.oneSelected;
     this.Selected[0] = this.oneSelected;
@@ -58,6 +61,12 @@ export class AppComponent {
     this.sixSelected = !this.sixSelected;
     this.Selected[5] = this.sixSelected;
     console.log(this.sixSelected);
+  }
+
+  onChangeThreeKindSelect() {
+    this.threeKindSelected = !this.threeKindSelected;
+    this.Selected[6] = this.threeKindSelected;
+    console.log(this.threeKindSelected);
   }
 
   addItem(NewItem: [number]) {
