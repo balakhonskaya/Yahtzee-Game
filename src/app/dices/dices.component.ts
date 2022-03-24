@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dices',
@@ -56,7 +56,9 @@ export class DicesComponent implements OnInit {
     this.diceArray.push(this.dice4);
     this.diceArray.push(this.dice5);
     console.log(this.diceArray);
-    
+
+
+    //Aces
     if (this.Selected[0] == true) {
       //console.log("Selected first"+ this.Selected.first);
       if (this.diceArray.includes(1)) {
@@ -69,6 +71,8 @@ export class DicesComponent implements OnInit {
        } else { this.oneScore = 0;}
     } else { this.oneScore = 0;}
      
+
+    //Twoes
     if (this.Selected[1] == true) {
      if (this.diceArray.includes(2)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
@@ -79,6 +83,8 @@ export class DicesComponent implements OnInit {
       console.log("value2:"+this.twoScore);
      } else { this.twoScore = 0;} 
     }
+
+    //Threes
     if (this.Selected[2] == true) {
      if (this.diceArray.includes(3)) {
       for (let i = 0; i < this.diceArray.length; i++)  {
@@ -89,7 +95,7 @@ export class DicesComponent implements OnInit {
       console.log("value3:"+this.threeScore);
      } else { this.threeScore = 0;}
     }
-
+    //Fours
     if (this.Selected[3] == true) {
       if (this.diceArray.includes(4)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
@@ -100,7 +106,7 @@ export class DicesComponent implements OnInit {
        console.log("value4:"+this.fourScore);
       } else { this.fourScore = 0;}
      }
-
+     //Fives
      if (this.Selected[4] == true) {
       if (this.diceArray.includes(5)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
@@ -111,7 +117,7 @@ export class DicesComponent implements OnInit {
        console.log("value5:"+this.fiveScore);
       } else { this.fiveScore = 0;}
      }
-
+     //Sixes
      if (this.Selected[5] == true) {
       if (this.diceArray.includes(6)) {
        for (let i = 0; i < this.diceArray.length; i++)  {
@@ -176,6 +182,7 @@ export class DicesComponent implements OnInit {
                    } 
                  }
            }
+
    
      this.scoreArray.push(this.oneScore);
      this.scoreArray.push(this.twoScore);
